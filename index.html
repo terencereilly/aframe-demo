@@ -1,14 +1,14 @@
 <html>
   <head>
    
-    <!-- Loaded A-Frame Framework here -->
+    <!-- Load A-Frame Framework -->
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     
   </head>
   <body>
     <a-scene>
       
-      <!-- Add all your ASSETS below this description and rename -->
+      <!-- Load all my assets -->
       <a-assets>
           <img id="texture01" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"></img>
           <img id="texture02" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"></img>
@@ -16,18 +16,18 @@
     
       </a-assets>
       
-        <!-- Paste <a-box> code from STEP 2: ADDING PRIMITIVES below this description and rename -->
+        <!-- Add a Box -->
        <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"></a-box>
       
-        <!-- Add <a-plane> code below this description and rename -->
+        <!-- Add a Plane -->
         <a-plane src="#texture03" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
 
-        <!-- Add <a-camera> code below this description and rename -->
+        <!-- Add a Camera and cursor -->
         <a-camera position="0 1.8 0">
             <a-cursor color="white"></a-cursor>
         </a-camera>
 
-        <!-- Add Lights code below this description and rename -->
+        <!-- Add Lights -->
         <!-- white Directional light -->
         <a-entity light="type:directional; castShadow:true;" position="-6 10 7"></a-entity>
   
@@ -37,10 +37,10 @@
         <!-- Ambient lighting -->
         <a-light type="ambient" color="#333"></a-light>
 
-        <!-- Add <a-sky> code below this description and rename -->
+        <!-- Add a sky -->
         <a-sky color="#ECECEC"></a-sky>
 
-</a-scene>
+    </a-scene>
   </body>
 </html>
 
