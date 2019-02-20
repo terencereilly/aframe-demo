@@ -12,14 +12,16 @@
       <a-assets>
           <img id="texture01" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"></img>
           <img id="texture02" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"></img>
+          <img id="texture03" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBlurred_Image_01_V01.jpg?1550581794421"></img>
+    
       
       </a-assets>
       
         <!-- Paste <a-box> code from STEP 2: ADDING PRIMITIVES below this description and rename -->
-       <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0"></a-box>
+       <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"></a-box>
       
         <!-- Add <a-plane> code below this description and rename -->
-        <a-plane src="#texture01" position="0 0 -5" rotation="-90 0 0" width="4" height="4"></a-plane>
+        <a-plane position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
 
         <!-- Add <a-camera> code below this description and rename -->
         <a-camera position="0 1.8 0">
@@ -31,9 +33,14 @@
   
        
   
-  <!-- Default lighting injected by A-Frame. -->
-<a-entity light="type: ambient; color: #DDD"></a-entity>
-<a-entity light="type: directional; color: #FFF; intensity: 1" position="-0.5 1 1"></a-entity>
+        <!-- Default lighting injected by A-Frame. -->
+        <a-entity light="type: ambient; color: #BBB"></a-entity>
+        <a-entity light="type: directional;
+                         castShadow: true;
+                         color: #FFF; 
+                         intensity: 1;
+                         shadowCameraVisible: true"
+                         position="-3 4 2"></a-entity>
 
              
     </a-scene>
