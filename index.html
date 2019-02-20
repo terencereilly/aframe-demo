@@ -21,7 +21,7 @@
        <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"></a-box>
       
         <!-- Add <a-plane> code below this description and rename -->
-        <a-plane src="#texture01" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
+        <a-plane src="#texture03" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
 
         <!-- Add <a-camera> code below this description and rename -->
         <a-camera position="0 1.8 0">
@@ -31,22 +31,20 @@
         <!-- Add <a-sky> code below this description and rename -->
         <a-sky color="#ECECEC"></a-sky>
   
-        <!-- Default lighting injected by A-Frame. -->
-        <a-entity light="type: ambient; color: #BBB"></a-entity>
-        
+    
 
-        <a-entity light="type: directional;
-                         castShadow: true;
-                         color: #BBB; 
-                         intensity: 0.6;
-                         shadowCameraVisible: true"
-                         position="-2 5 1"></a-entity>
-
-<a-entity light="type: point; intensity: 0.4; distance: 50; decay: 2"
-          position="0 10 10"></a-entity>
+        <a-entity position="-5 8 -2"
+                  light="type: point; 
+                         castShadow: true; 
+                         intensity: 0.7; 
+                         distance: 50; 
+                         decay: 2">
+      </a-entity>
 
              
     </a-scene>
   </body>
 </html>
 
+
+  
