@@ -15,7 +15,10 @@
           <img id="texture03" crossorigin="anonymous" src="https://cdn.glitch.com/d022b461-dd24-4eac-9d07-cf08b96bdbd6%2FMarble_SlabWhite_1K_albedo.jpg?1550701425460"></img>
   
          <img id="skyTexture" crossorigin="anonymous" src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"></img>
-         <video id="360video" autoplay loop="true" src="https://cdn.glitch.com/a190912e-e65e-43d7-931e-71b27e873bd5%2FMy_Flashing_Video_Effect.mp4?1550706587106"></video>
+
+         <video id="video" crossorigin="anonymous" autoplay loop="true" src="https://cdn.glitch.com/a190912e-e65e-43d7-931e-71b27e873bd5%2FMy_Flashing_Video_Effect.mp4?1550706587106"></video>
+         <video id="video1" crossorigin="anonymous" autoplay loop="true" src="https://cdn.glitch.com/a190912e-e65e-43d7-931e-71b27e873bd5%2FWalking%20360%20Footage.mp4?1550706880791"></video>
+         <video id="video2" crossorigin="anonymous" autoplay loop="true" src="https://cdn.glitch.com/a190912e-e65e-43d7-931e-71b27e873bd5%2FDrive%20Up%20360%20Footage.mp4?1550707147423"></video>
       </a-assets>
       
         <!-- Add a Box -->
@@ -39,9 +42,11 @@
         <!-- Ambient lighting -->
         <a-light type="ambient" color="#333"></a-light>
 
-        <!-- Add a sky -->
-        <a-sky src="#skyTexture" color="grey"></a-sky>
-
+        <!-- Add 360 Image -->
+        <!-- <a-sky src="#skyTexture" color="grey"></a-sky> -->
+        
+        <!-- Add 360 Video -->
+        <a-videosphere src="#video2"></a-videosphere>
 
     </a-scene>
   </body>
