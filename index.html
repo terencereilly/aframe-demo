@@ -30,16 +30,19 @@
   
         <!-- Add <a-sky> code below this description and rename -->
         <a-sky color="#ECECEC"></a-sky>
- 
 
-<a-entity light="type: hemisphere; color: ; groundColor: #3C3; intensity: 2"></a-entity>
 
-    <a-light type="directional" position="5 10 0" rotation="-90 0 0" target="#directionaltarget">
-  <a-entity id="directionaltarget" position="2 5 0"></a-entity>
-</a-light>
+<!-- white Directional light, 1 meter in the air. -->
+        <a-entity light="type:directional; castShadow:true;" position="-4 10 7"></a-entity>
+  
+        <!-- white point light, 5 meters in the air. -->
+        <a-light type="point" color="yellow" position="-7 0 0"></a-light>
 
-             
-    </a-scene>
+        <!-- Dim ambient lighting. -->
+        <a-light type="ambient" color="#333"></a-light>
+
+
+</a-scene>
   </body>
 </html>
 
