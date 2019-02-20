@@ -14,7 +14,6 @@
           <img id="texture02" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"></img>
           <img id="texture03" crossorigin="anonymous" src="https://cdn.glitch.com/d022b461-dd24-4eac-9d07-cf08b96bdbd6%2FMarble_SlabWhite_1K_albedo.jpg?1550701425460"></img>
     
-      
       </a-assets>
       
         <!-- Paste <a-box> code from STEP 2: ADDING PRIMITIVES below this description and rename -->
@@ -27,20 +26,19 @@
         <a-camera position="0 1.8 0">
             <a-cursor color="white"></a-cursor>
         </a-camera>
+
+        <!-- Add Lights code below this description and rename -->
+        <!-- white Directional light -->
+        <a-entity light="type:directional; castShadow:true;" position="-6 10 7"></a-entity>
   
-        <!-- Add <a-sky> code below this description and rename -->
-        <a-sky color="#ECECEC"></a-sky>
+        <!-- Blue Fill light -->
+        <a-light type="point" color="lightblue" position="-7 0 9"></a-light>
 
-
-<!-- white Directional light, 1 meter in the air. -->
-        <a-entity light="type:directional; castShadow:true;" position="-4 10 7"></a-entity>
-  
-        <!-- white point light, 5 meters in the air. -->
-        <a-light type="point" color="yellow" position="-7 0 0"></a-light>
-
-        <!-- Dim ambient lighting. -->
+        <!-- Ambient lighting -->
         <a-light type="ambient" color="#333"></a-light>
 
+        <!-- Add <a-sky> code below this description and rename -->
+        <a-sky color="#ECECEC"></a-sky>
 
 </a-scene>
   </body>
