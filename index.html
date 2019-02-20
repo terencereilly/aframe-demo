@@ -13,6 +13,10 @@
           <img id="texture01" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"></img>
           <img id="texture02" crossorigin="anonymous" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"></img>
           <img id="texture03" crossorigin="anonymous" src="https://cdn.glitch.com/d022b461-dd24-4eac-9d07-cf08b96bdbd6%2FMarble_SlabWhite_1K_albedo.jpg?1550701425460"></img>
+  
+         <img id="skyTexture" crossorigin="anonymous" src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"></img>
+  
+  
     
       </a-assets>
       
@@ -20,7 +24,7 @@
        <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"></a-box>
       
         <!-- Add a Plane -->
-        <a-plane src="#texture03" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
+        <a-plane src="#texture01" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
 
         <!-- Add a Camera and cursor -->
         <a-camera position="0 1.8 0">
@@ -38,7 +42,7 @@
         <a-light type="ambient" color="#333"></a-light>
 
         <!-- Add a sky -->
-        <a-sky color="#ECECEC"></a-sky>
+        <a-sky src="#skyTexture" color="grey"></a-sky>
 
     </a-scene>
   </body>
