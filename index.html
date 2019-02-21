@@ -4,6 +4,8 @@
     <!-- Load A-Frame Framework -->
     <script src="https://aframe.io/releases/0.9.0/aframe.min.js"></script>
     
+    <!-- Add Event Set Component and rename after -->
+    
   </head>
   <body>
     <a-scene>
@@ -25,10 +27,13 @@
        <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"
               animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite">
        </a-box>
+
+       <!-- Add interactive events inside <a-box> above -->
    
-      
         <!-- Add a Plane -->
         <a-plane src="#texture01" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"></a-plane>
+
+        <!-- Add interactive events inside <a-plane> above -->
 
         <!-- Add a Camera and cursor -->
         <a-camera position="0 1.8 0">
