@@ -25,7 +25,13 @@
           id="skyTexture"
           src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"
         />
+        
+        <a-asset-item id="robotoFont" src="https://cdn.aframe.io/fonts/Roboto-msdf.json"/>
+        
       </a-assets>
+      
+       
+    
 
       <!-- Add a Box and animate it spinning -->
       <a-box
@@ -60,13 +66,14 @@
         radius="0.5"
         width="2"
         height="2"
-        material="color: #333"
+        material="color: black"
         event-set__enter="_event: click; _target: #cylinderText; visible: true"
         event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
       >
         <a-text
           id="cylinderText"
           value="U Clicked Me!"
+                font="#robotoFont"
           align="center"
           color="#FFF"
           visible="false"
@@ -75,6 +82,9 @@
                 
         ></a-text>
       </a-image>
+    
+    
+   
 
       <!-- Add a Camera and cursor -->
       <a-camera position="0 1.8 0">
@@ -95,7 +105,9 @@
       <a-light type="ambient" color="#333"></a-light>
 
       <!-- Add 360 Image -->
-      <a-sky src="#skyTexture" color="grey"></a-sky>
+<!--       <a-sky src="#skyTexture" color="grey"></a-sky> -->
+      
+         <a-sky color="#ECECEC"></a-sky>
 
       <!-- Add 360 Video 
       <a-videosphere src="#video2"></a-videosphere>
