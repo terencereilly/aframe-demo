@@ -25,17 +25,16 @@
           id="skyTexture"
           src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"
         />
-        
-        <a-asset-item id="robotoFont" src="https://cdn.aframe.io/fonts/Roboto-msdf.json"/>
-        
+
+        <a-asset-item
+          id="robotoFont"
+          src="https://cdn.aframe.io/fonts/Roboto-msdf.json"
+        />
       </a-assets>
-      
-       
-    
 
       <!-- Add a Box and animate it spinning -->
       <a-box
-        src="#texture02"
+         src="#texture02"
         position="0 0.5 -5"
         rotation="0 45 0"
         shadow="receive: true"
@@ -50,41 +49,39 @@
 
       <!-- Add a Plane -->
       <a-plane
-        src="#texture01"
+      src="#texture03"
         position="0 0 -5"
         rotation="-90 0 0"
         width="4"
         height="4"
-        shadow="receive: true"
         event-set__down="_event: click; material.wireframe: true"
         event-set__up="_event: mouseup; material.wireframe: false"
         event-set__leave="_event: mouseleave; material.wireframe: false"
       ></a-plane>
 
       <a-image
+              src= #skyTexture"
         position="0 3.5 -7"
         radius="0.5"
         width="2"
         height="2"
-        material="color: black"
+        material="color: lightgrey"
         event-set__enter="_event: click; _target: #cylinderText; visible: true"
         event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
       >
         <a-text
           id="cylinderText"
           value="U Clicked Me!"
-                font="#robotoFont"
           align="center"
-          color="#FFF"
+          color="white"
           visible="false"
           position="0 0 0.2"
-     
-                
         ></a-text>
       </a-image>
-    
-    
-   
+      
+        <!-- Add Text with custom font that becomes visible when box is clicked -->
+      <a-text id="clickText" value="Welcome to A-Frame!" position="0 0 0" width="4" align="center" color="lightblue"
+              font="#robotoFont" visible="false"></a-text>
 
       <!-- Add a Camera and cursor -->
       <a-camera position="0 1.8 0">
@@ -104,13 +101,8 @@
       <!-- Ambient lighting -->
       <a-light type="ambient" color="#333"></a-light>
 
-      <!-- Add 360 Image -->
-<!--       <a-sky src="#skyTexture" color="grey"></a-sky> -->
+      <a-sky src="#skyTexture" color="#ECECEC"></a-sky> 
       
-         <a-sky color="#ECECEC"></a-sky>
-
-      <!-- Add 360 Video 
-      <a-videosphere src="#video2"></a-videosphere>
     </a-scene>
   </body>
 </html>
