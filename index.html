@@ -1,68 +1,103 @@
 <html>
   <head>
-   
     <!-- Load A-Frame Framework -->
-   <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
     <!-- Add Event Set Component and rename after -->
-   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-compone nt.min.js"></script> 
-
-    
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
   </head>
   <body>
     <a-scene>
-      
       <!-- Load all my assets -->
       <a-assets>
-          <img id="texture01" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"></img>
-          <img id="texture02" src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"></img>
-          <img id="texture03" src="https://cdn.glitch.com/d022b461-dd24-4eac-9d07-cf08b96bdbd6%2FMarble_SlabWhite_1K_albedo.jpg?1550701425460"></img>
-          <img id="skyTexture" src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"></img>
-
-    
+        <img
+          id="texture01"
+          src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"
+        />
+        <img
+          id="texture02"
+          src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FBronze_Dirt_Texture_01_V01.jpg?1550581286437"
+        />
+        <img
+          id="texture03"
+          src="https://cdn.glitch.com/d022b461-dd24-4eac-9d07-cf08b96bdbd6%2FMarble_SlabWhite_1K_albedo.jpg?1550701425460"
+        />
+        <img
+          id="skyTexture"
+          src="https://cdn.glitch.com/49eedea1-b411-4200-945d-37ee83685cf4%2FMilkyway_V1.jpg?1550705749631"
+        />
       </a-assets>
-      
-       <!-- Add a Box and animate it spinning -->
-       <a-box src="#texture02" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"
-              animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
-              event-set__down="_event: mousedown; scale: 1.2 1.2 1.2" 
-              event-set__up="_event: mouseup; scale: 1 1 1" 
-              event-set__leave="_event: mouseleave; scale: 1 1 1"> 
-       </a-box>
 
-       <!-- Add interactive events inside <a-box> above -->
-   
-        <!-- Add a Plane -->
-        <a-plane src="#texture01" position="0 0 -5" rotation="-90 0 0" width="4" height="4" shadow="receive: true"
-                 event-set__down="_event: click; material.wireframe: true" 
-                 event-set__up="_event: mouseup; material.wireframe: false" 
-                 event-set__leave="_event: mouseleave; material.wireframe: false"></a-plane>
+      <!-- Add a Box and animate it spinning -->
+      <a-box
+        src="#texture02"
+        position="0 0.5 -5"
+        rotation="0 45 0"
+        shadow="receive: true"
+        animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
+        event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+        event-set__up="_event: mouseup; scale: 1 1 1"
+        event-set__leave="_event: mouseleave; scale: 1 1 1"
+      >
+      </a-box>
 
-        <!-- Add interactive events inside <a-plane> above -->
+      <!-- Add interactive events inside <a-box> above -->
 
-        <!-- Add a Camera and cursor -->
-        <a-camera position="0 1.8 0">
-            <a-cursor color="white"></a-cursor>
-        </a-camera>
+      <!-- Add a Plane -->
+      <a-plane
+        src="#texture01"
+        position="0 0 -5"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        shadow="receive: true"
+        event-set__down="_event: click; material.wireframe: true"
+        event-set__up="_event: mouseup; material.wireframe: false"
+        event-set__leave="_event: mouseleave; material.wireframe: false"
+      ></a-plane>
 
-        <!-- Add Lights -->
-        <!-- white Directional light -->
-        <a-entity light="type:directional; castShadow:true;" position="-6 10 7"></a-entity>
-  
-        <!-- Blue Fill light -->
-        <a-light type="point" color="lightblue" position="-7 0 9"></a-light>
+      <a-image
+        position="0 3 -7"
+        radius="0.2"
+        width="3"
+        height="3"
+        event-set__enter="_event: click; _target: #cylinderText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false"
+      >
+        <a-text
+          id="cylinderText"
+          value="Hi ya!"
+          align="center"
+          color="#FFF"
+          visible="false"
+          position="0 3 0"
+          geometry="primitive: plane; width: 3";
+          material="color: "red"
+        ></a-text>
+      </a-image>
 
-        <!-- Ambient lighting -->
-        <a-light type="ambient" color="#333"></a-light>
+      <!-- Add a Camera and cursor -->
+      <a-camera position="0 1.8 0">
+        <a-cursor color="white"></a-cursor>
+      </a-camera>
 
-        <!-- Add 360 Image -->
-        <a-sky src="#skyTexture" color="grey"></a-sky> 
-        
-        <!-- Add 360 Video 
-        <a-videosphere src="#video2"></a-videosphere>-->
+      <!-- Add Lights -->
+      <!-- white Directional light -->
+      <a-entity
+        light="type:directional; castShadow:true;"
+        position="-6 10 7"
+      ></a-entity>
 
+      <!-- Blue Fill light -->
+      <a-light type="point" color="lightblue" position="-7 0 9"></a-light>
+
+      <!-- Ambient lighting -->
+      <a-light type="ambient" color="#333"></a-light>
+
+      <!-- Add 360 Image -->
+      <a-sky src="#skyTexture" color="grey"></a-sky>
+
+      <!-- Add 360 Video 
+      <a-videosphere src="#video2"></a-videosphere>-->
     </a-scene>
   </body>
 </html>
-
-
-  
