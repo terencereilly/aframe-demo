@@ -30,7 +30,7 @@
         width="4"
         height="4"
         event-set__down="_event: click; material.wireframe: true"
-        event-set__up="_event: mouseup; material.wireframe: false"
+        event-set__leave="_event: mouseleave; material.wireframe: false"
       ></a-plane>
       
       <!-- Wall -->
@@ -40,6 +40,8 @@
         width="2"
         height="2"
         color="#EF2D5E"
+        event-set__enter="_event: click; _target: #posterText; visible: true"
+        event-set__leave="_event: mouseleave; _target: #posterText; visible: false"
       >
         <a-text
           id="posterText"
@@ -130,5 +132,5 @@
 
 
 <!-- // Interaction for Wall - Add to plane
-event-set__enter="_event: click; _target: #cylinderText; visible: true"
-event-set__leave="_event: mouseleave; _target: #cylinderText; visible: false" -->
+     event-set__enter="_event: click; _target: #posterText; visible: true"
+     event-set__leave="_event: mouseleave; _target: #posterText; visible: false" -->
