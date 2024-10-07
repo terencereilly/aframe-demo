@@ -2,7 +2,7 @@
   <head>
     <!-- Load A-Frame Framework -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
-   <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script>
+<!--    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
  -->
   </head>
   
@@ -17,8 +17,6 @@
         rotation="0 45 0"
         shadow="receive: true"
         animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
-        event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
-        event-set__up="_event: mouseup; scale: 1 1 1"
        >
       </a-box>
       
@@ -29,8 +27,6 @@
         rotation="-90 0 0"
         width="4"
         height="4"
-                event-set__down="_event: click; material.wireframe: true"
-        event-set__leave="_event: mouseleave; material.wireframe: false" 
       ></a-plane>
       
       <!-- Wall -->
@@ -40,8 +36,6 @@
         width="2"
         height="2"
         color="#EF2D5E"
-               event-set__enter="_event: click; _target: #posterText; visible: true"
-        event-set__leave="_event: mouseleave; _target: #posterText; visible: false"
       >
         <a-text
           id="posterText"
@@ -72,8 +66,6 @@
 
       <a-sky color="#ECECEC"></a-sky>
     </a-scene>
-    
-    
     
   </body>
 </html>
