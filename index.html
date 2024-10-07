@@ -7,26 +7,8 @@
   <body>
     
     <a-scene>
-      
-      <!-- Load all my assets -->
-      <a-assets>
-        <img
-          id="texture01"
-          src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"
-        />
-      </a-assets>
-      
-      <!-- Ground Plane -->
-      <a-plane
-        color="#7BC8A4"
-        position="0 0 -5"
-        rotation="-90 0 0"
-        width="4"
-        height="4"
-      ></a-plane>
 
-      <!-- Add a Box and animate it spinning -->
-      <!-- src="#texture01" -->
+      <!-- Box -->
       <a-box
         color="#FFC65D"
         position="0 0.5 -5"
@@ -36,6 +18,16 @@
       >
       </a-box>
       
+       <!-- Ground -->
+      <a-plane
+        color="#7BC8A4"
+        position="0 0 -5"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+      ></a-plane>
+      
+      <!-- Wall -->
       <a-plane
         position="0 3.5 -7"
         radius="0.5"
@@ -50,7 +42,6 @@
           color="white"
           visible="false"
           position="0 0 0.2"
-                
         ></a-text>
       </a-plane>   
 
