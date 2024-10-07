@@ -17,6 +17,19 @@
           src="https://cdn.glitch.com/e1692e96-b543-451a-b75d-36e0b3b850e7%2FChecker_Texture_V01.jpg?1550581281017"
         />
       </a-assets>
+      
+      <!-- Ground Plane -->
+      <a-plane
+        src=""
+        color="#7BC8A4"
+        position="0 0 -5"
+        rotation="-90 0 0"
+        width="4"
+        height="4"
+        event-set__down="_event: click; material.wireframe: true"
+        event-set__up="_event: mouseup; material.wireframe: false"
+        event-set__leave="_event: mouseleave; material.wireframe: false"
+      ></a-plane>
 
       <!-- Add a Box and animate it spinning -->
       <!-- src="#texture01" -->
@@ -31,23 +44,8 @@
         event-set__leave="_event: mouseleave; scale: 1 1 1"
       >
       </a-box>
-
-      <!-- Add interactive events inside <a-box> above -->
-
-      <!-- Add a Plane -->
+      
       <a-plane
-        src=""
-        color="#7BC8A4"
-        position="0 0 -5"
-        rotation="-90 0 0"
-        width="4"
-        height="4"
-        event-set__down="_event: click; material.wireframe: true"
-        event-set__up="_event: mouseup; material.wireframe: false"
-        event-set__leave="_event: mouseleave; material.wireframe: false"
-      ></a-plane>
-
-      <a-image
         position="0 3.5 -7"
         radius="0.5"
         width="2"
@@ -64,19 +62,7 @@
           visible="false"
           position="0 0 0.2"
         ></a-text>
-      </a-image>
-
-      <!-- Add Text with custom font that becomes visible when box is clicked -->
-      <a-text
-        id="clickText"
-        value="Welcome to A-Frame!"
-        position="0 0 0"
-        width="4"
-        align="center"
-        color="lightblue"
-        font="#robotoFont"
-        visible="false"
-      ></a-text>
+      </a-plane>   
 
       <!-- Add a Camera and cursor -->
       <a-camera position="0 1.8 0">
