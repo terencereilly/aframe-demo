@@ -2,6 +2,8 @@
   <head>
     <!-- Load A-Frame Framework -->
     <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
+
   </head>
   
   <body>
@@ -15,7 +17,9 @@
         rotation="0 45 0"
         shadow="receive: true"
         animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
-      >
+        event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
+        event-set__up="_event: mouseup; scale: 1 1 1"
+       >
       </a-box>
       
        <!-- Ground -->
@@ -25,6 +29,8 @@
         rotation="-90 0 0"
         width="4"
         height="4"
+        event-set__down="_event: click; material.wireframe: true"
+        event-set__up="_event: mouseup; material.wireframe: false"
       ></a-plane>
       
       <!-- Wall -->
@@ -112,16 +118,15 @@
 <!-- // Add Event Set Component and rename after
     <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
 
-<!-- // Interaction for the Ground plane
-     event-set__down="_event: click; material.wireframe: true"
-     event-set__up="_event: mouseup; material.wireframe: false"
-     event-set__leave="_event: mouseleave; material.wireframe: false" -->
-
-
 <!-- // Interaction for the Box
     event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
     event-set__up="_event: mouseup; scale: 1 1 1"
     event-set__leave="_event: mouseleave; scale: 1 1 1" -->
+
+<!-- // Interaction for the Ground plane
+     event-set__down="_event: click; material.wireframe: true"
+     event-set__up="_event: mouseup; material.wireframe: false"
+     event-set__leave="_event: mouseleave; material.wireframe: false" -->
 
 
 <!-- // Interaction for Wall - Add to plane
