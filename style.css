@@ -35,3 +35,9 @@ h1 {
   border-radius: 0 0 8px 8px;
   padding: 2px 0;
 }
+
+@media (max-width: 600px) {
+  #qr-container {
+    display: none;
+  }
+}
