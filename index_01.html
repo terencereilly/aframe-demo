@@ -1,0 +1,41 @@
+<html>
+
+<head>
+  <!-- Load A-Frame Framework -->
+  <script src="https://aframe.io/releases/1.6.0/aframe.min.js"></script>
+
+</head>
+
+<body>
+
+  <a-scene>
+
+    <!-- Box -->
+    <a-box color="#2196F3" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"
+      animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"></a-box>
+
+    <!-- Ground -->
+    <a-plane color="#7BC8A4" position="0 0 -5" rotation="-90 0 0" width="4" height="4"></a-plane>
+
+    <!-- Wall -->
+    <a-plane id="redPlane" position="0 3.5 -7" radius="0.5" width="2" height="2" color="#EF2D5E"></a-plane>
+
+    <!-- Add a Camera and cursor -->
+    <a-camera position="0 1.8 0" jump><a-cursor color="white"></a-cursor></a-camera>
+
+    <!-- white Directional light -->
+    <a-entity light="type:directional; castShadow:true;" position="-4 10 7"></a-entity>
+
+    <!-- Blue Fill light -->
+    <a-light type="point" color="white" position="-2 10 5"></a-light>
+
+    <!-- Ambient lighting -->
+    <a-light type="ambient" color="#888"></a-light>
+
+    <a-sky color="grey"></a-sky>
+
+  </a-scene>
+
+</body>
+
+</html>
