@@ -9,3 +9,29 @@ h1 {
   font-style: italic;
   color: #373fff;
 }
+
+#qr-container {
+  position: fixed;
+  bottom: 20px;
+  left: 20px;
+  z-index: 1000;
+  background: transparent;
+}
+
+#qr-container img {
+  width: 120px;
+  height: 120px;
+  border: 2px solid #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  background: #fff;
+}
+
+#qr-container div {
+  text-align: center;
+  font-size: 12px;
+  color: #222;
+  background: #fff;
+  border-radius: 0 0 8px 8px;
+  padding: 2px 0;
+}
