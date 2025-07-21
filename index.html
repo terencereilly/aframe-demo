@@ -7,17 +7,12 @@
 </head>
 
 <body>
-  <div id="qr-container" style="position: fixed; bottom: 20px; left: 20px; z-index: 1000;">
-    <img src="https://api.qrserver.com/v1/create-qr-code/?size=120x120&data=https://aframe-demo-seven.vercel.app/"
-      alt="Open demo"
-      style="width: 120px; height: 120px; border: 2px solid #fff; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.2); background: #fff;" />
-  </div>
 
   <a-scene>
-    <!-- <a-assets>
-      <a-asset-item id="myModel" src="assets/Robot/Robot_73_V01.gltf"></a-asset-item>
-    </a-assets> -->
-
+    <a-assets>
+      <video id="city360" src="assets/360_city.mp4" autoplay loop="true" crossorigin="anonymous" webkit-playsinline
+        playsinline></video>
+    </a-assets>
     <!-- Box -->
     <a-box color="#2196F3" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"
       animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
@@ -25,22 +20,13 @@
     </a-box>
 
     <!-- Ground -->
-    <a-plane color="#7BC8A4" position="0 0 -5" rotation="-90 0 0" width="4" height="4"
-      event-set__down="_event: click; material.wireframe: true"
-      event-set__leave="_event: mouseleave; material.wireframe: false"></a-plane>
+    <a-plane color="#7BC8A4" position="0 0 -5" rotation="-90 0 0" width="4" height="4"></a-plane>
 
     <!-- Wall -->
-    <a-plane id="redPlane" position="0 3.5 -7" radius="0.5" width="2" height="2" color="#EF2D5E"
-      event-set__enter="_event: click; _target: #posterText; visible: true"
-      event-set__leave="_event: mouseleave; _target: #posterText; visible: false">
-      <a-text id="posterText" value="U Clicked Me!" align="center" color="white" visible="false"
-        position="0 0 0.2"></a-text>
-    </a-plane>
+    <a-plane id="redPlane" position="0 3.5 -7" radius="0.5" width="2" height="2" color="#EF2D5E"></a-plane>
 
     <!-- Add a Camera and cursor -->
-    <a-camera position="0 1.8 0" jump>
-      <a-cursor color="white"></a-cursor>
-    </a-camera>
+    <a-camera position="0 1.8 0" jump><a-cursor color="white"></a-cursor></a-camera>
 
     <!-- white Directional light -->
     <a-entity light="type:directional; castShadow:true;" position="-4 10 7"></a-entity>
@@ -51,106 +37,17 @@
     <!-- Ambient lighting -->
     <a-light type="ambient" color="#777"></a-light>
 
-    <a-sky color="grey"></a-sky>
-
-    <!-- <a-entity gltf-model="#myModel" animation-mixer position="4 2.5 -3" scale="1 1 1">
-    </a-entity> -->
+    <a-videosphere src="#city360"></a-videosphere>
 
   </a-scene>
 
-  <!-- <script>
-    // Add this script at the end of your <body>
-    document.addEventListener('DOMContentLoaded', function () {
-      var redPlane = document.querySelector('#redPlane');
-      redPlane.addEventListener('click', function () {
-        window.open('https://www.google.com', '_blank');
-      });
+  <script>
+    document.querySelector('a-scene').addEventListener('click', function () {
+      var video = document.querySelector('#city360');
+      if (video.paused) video.play();
     });
   </script>
-
-  <script>
-    AFRAME.registerComponent('jump', {
-      init: function () {
-        this.isJumping = false;
-        this.velocity = 0;
-        this.groundY = this.el.object3D.position.y;
-        window.addEventListener('keydown', (e) => {
-          if (e.code === 'Space' && !this.isJumping) {
-            this.isJumping = true;
-            this.velocity = 0.15; // jump strength
-          }
-        });
-      },
-      tick: function (time, delta) {
-        if (this.isJumping) {
-          let pos = this.el.object3D.position;
-          pos.y += this.velocity;
-          this.velocity -= 0.01; // gravity
-          if (pos.y <= this.groundY) {
-            pos.y = this.groundY;
-            this.isJumping = false;
-            this.velocity = 0;
-          }
-        }
-      }
-    });
-  </script> -->
 
 </body>
 
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-<!-- // Add Event Set Component and rename after
-    <script src="https://unpkg.com/aframe-event-set-component@3.0.3/dist/aframe-event-set-component.min.js"></script> -->
-
-<!-- // Interaction for the Box
-        event-set__down="_event: mousedown; scale: 1.2 1.2 1.2"
-        event-set__up="_event: mouseup; scale: 1 1 1"
-     -->
-
-<!-- // Interaction for the Ground plane
-        event-set__down="_event: click; material.wireframe: true"
-        event-set__leave="_event: mouseleave; material.wireframe: false" -->
-
-
-<!-- // Interaction for Wall - Add to plane
-        event-set__enter="_event: click; _target: #posterText; visible: true"
-        event-set__leave="_event: mouseleave; _target: #posterText; visible: false" -->

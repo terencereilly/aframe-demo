@@ -9,7 +9,10 @@
 <body>
 
   <a-scene>
-
+    <a-assets>
+      <video id="city360" src="assets/360_city.mp4" autoplay loop="true" crossorigin="anonymous" webkit-playsinline
+        playsinline></video>
+    </a-assets>
     <!-- Box -->
     <a-box color="#2196F3" position="0 0.5 -5" rotation="0 45 0" shadow="receive: true"
       animation="property: rotation; to: 0 360 0; dur: 15000; easing: linear; repeat: indefinite"
@@ -34,9 +37,16 @@
     <!-- Ambient lighting -->
     <a-light type="ambient" color="#777"></a-light>
 
-    <a-sky color="grey"></a-sky>
+    <a-videosphere src="#city360"></a-videosphere>
 
   </a-scene>
+
+  <script>
+    document.querySelector('a-scene').addEventListener('click', function () {
+      var video = document.querySelector('#city360');
+      if (video.paused) video.play();
+    });
+  </script>
 
 </body>
 
