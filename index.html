@@ -48,6 +48,13 @@
     });
   </script>
 
+  <!-- QR Code for mobile access -->
+  <div id="qr-container"
+    style="position: absolute; bottom: 20px; left: 20px; z-index: 10; background: white; padding: 8px; border-radius: 8px;">
+    <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=http://localhost:8000/index.html"
+      alt="QR Code to open on mobile" width="120" height="120">
+  </div>
+
 </body>
 
 </html>
